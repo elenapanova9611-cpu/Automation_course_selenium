@@ -15,11 +15,7 @@ public class WebDriverTests {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
         List<WebElement> elements = driver.findElements(By.tagName("a"));
-        try {
-            elements.get(10).click();
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException(e.getMessage());
-        }
+        elements.get(10).click();
         driver.quit();
     }
 }
