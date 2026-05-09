@@ -1,4 +1,4 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
 public enum Browser {
     chrome,

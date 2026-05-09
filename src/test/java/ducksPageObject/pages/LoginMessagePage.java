@@ -1,4 +1,4 @@
-package ducks.pages;
+package ducksPageObject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

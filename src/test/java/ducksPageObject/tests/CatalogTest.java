@@ -1,8 +1,7 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
-import ducks.pages.CatalogPage;
-import ducks.pages.ProductInfoPage;
-import ducks.pages.TopPanelMenuPage;
+import ducksPageObject.pages.CatalogPage;
+import ducksPageObject.pages.ProductInfoPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,10 +9,8 @@ import org.testng.annotations.Test;
 public class CatalogTest extends BaseTest {
 
     @Override
-    @BeforeMethod
-    public void setUp() {
-        super.setUp();
-        driver.get(PageUrls.CATALOG_URL);
+    public String getPageUrl() {
+        return PageUrls.CATALOG_URL;
     }
 
     @Test(description = "Check if Price filter is enabled by default")

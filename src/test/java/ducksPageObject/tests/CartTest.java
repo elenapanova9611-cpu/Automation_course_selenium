@@ -1,6 +1,6 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
-import ducks.pages.*;
+import ducksPageObject.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,10 +8,8 @@ import org.testng.annotations.Test;
 public class CartTest extends BaseTest {
 
     @Override
-    @BeforeMethod
-    public void setUp() {
-        super.setUp();
-        driver.get(PageUrls.CATALOG_URL);
+    public String getPageUrl() {
+        return PageUrls.CATALOG_URL;
     }
 
     @Test(description = "Product is added to cart when it card button is clicked")

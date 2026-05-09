@@ -1,18 +1,11 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
-import ducks.pages.TopPanelMenuPage;
+import ducksPageObject.pages.TopPanelMenuPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TopPanelMenuTest extends BaseTest {
-
-    @Override
-    @BeforeMethod
-    public void setUp() {
-        super.setUp();
-        driver.get(PageUrls.DUCK_SHOP_URL);
-    }
 
     @Test(description = "Clicking the Home icon in the top panel opens the home page with the slider image visible.")
     public void homePageButtonClickOpensHomePageTest() {

@@ -1,4 +1,4 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,11 +37,17 @@ public class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        driver.get(getPageUrl());
     }
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
+    }
+
+    protected String getPageUrl() {
+        return PageUrls.DUCK_SHOP_URL;
     }
 
     public class PageUrls {

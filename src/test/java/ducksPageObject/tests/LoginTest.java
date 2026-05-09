@@ -1,19 +1,12 @@
-package ducks.tests;
+package ducksPageObject.tests;
 
-import ducks.pages.LoginMessagePage;
-import ducks.pages.LoginPage;
+import ducksPageObject.pages.LoginMessagePage;
+import ducksPageObject.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-
-    @Override
-    @BeforeMethod
-    public void setUp() {
-        super.setUp();
-        driver.get(PageUrls.DUCK_SHOP_URL);
-    }
 
     @Test(description = "Success message shows if login with correct credentials")
     public void loginWithCorrectCredentialsTest() {
