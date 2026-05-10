@@ -1,7 +1,7 @@
 package ducksPageObject.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,17 +21,20 @@ public class CartPage {
         this.driver = driver;
     }
 
+    @Step("Check cart is not empty")
     public boolean isCartNotEmpty() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(CUSTOMER_DETAILS_TITLE)).isDisplayed()
                 && wait.until(ExpectedConditions.visibilityOfElementLocated(ORDER_SUMMARY_TITLE)).isDisplayed();
     }
 
+    @Step("Check cart is empty")
     public boolean isCartEmpty() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(EMPTY_CART_MESSAGE)).isDisplayed();
     }
 
+    @Step("Remove product from cart")
     public void clickRemoveButton() {
         driver.findElement(REMOVE_BUTTON).click();
     }

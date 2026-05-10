@@ -1,9 +1,8 @@
 package ducksPageObject.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class CatalogPage {
 
@@ -16,10 +15,12 @@ public class CatalogPage {
         this.driver = driver;
     }
 
+    @Step("Check if Price filter ia active by default")
     public boolean isPriceFilterActive() {
         return driver.findElement(FILTER_PRICE).getAttribute("class").contains("active");
     }
 
+    @Step("Click catalog item")
     public void clickCatalogItem() {
         driver.findElement(PRODUCT_LINK).click();
     }

@@ -2,13 +2,18 @@ package ducksPageObject.tests;
 
 import ducksPageObject.pages.LoginMessagePage;
 import ducksPageObject.pages.LoginPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Success message shows if login with correct credentials")
+    @Feature("Authentication")
+    @Story("Implement authentication logic")
+    @Description("Success message shows if login with correct credentials")
+    @Test(description = "Login with correct credentials")
     public void loginWithCorrectCredentialsTest() {
         // given
         String expectedSuccessMessage = "You are now logged in as Lena Panova.";
@@ -24,7 +29,10 @@ public class LoginTest extends BaseTest {
                 "Expected success login message to be displayed.");
     }
 
-    @Test(description = "Error message shows if login with incorrect credentials")
+    @Feature("Authentication")
+    @Story("Implement authentication logic")
+    @Description("Error message shows if login with incorrect credentials")
+    @Test(description = "Login with incorrect credentials")
     public void loginWithIncorrectCredentialsTest() {
         // given
         String expectedErrorMessage = "Wrong password or the account is disabled, or does not exist";

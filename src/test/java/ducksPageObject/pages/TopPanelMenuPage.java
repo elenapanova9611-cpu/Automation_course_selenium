@@ -1,5 +1,6 @@
 package ducksPageObject.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,18 +23,22 @@ public class TopPanelMenuPage {
         this.driver = driver;
     }
 
+    @Step("Open home page")
     public void openHomePage() {
         driver.findElement(HOME_BUTTON).click();
     }
 
+    @Step("Open Rubber Ducks page")
     public void openRubberDucksPage() {
         driver.findElement(RUBBER_DUCK_BUTTON).click();
     }
 
+    @Step("Get page title")
     public String getTitle() {
         return driver.getTitle();
     }
 
+    @Step("Open Subcategory page")
     public void openSubcategoryPage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement rubberDuckMenuTab = driver.findElement(RUBBER_DUCK_BUTTON);
@@ -42,6 +47,7 @@ public class TopPanelMenuPage {
         wait.until(ExpectedConditions.elementToBeClickable(SUBCATEGORY_BUTTON)).click();
     }
 
+    @Step("Check home page is displayed")
     public boolean isHomePageImageDisplayed() {
         return driver.findElement(HOME_PAGE_IMAGE).isDisplayed();
     }

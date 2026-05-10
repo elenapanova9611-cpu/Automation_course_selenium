@@ -2,6 +2,9 @@ package ducksPageObject.tests;
 
 import ducksPageObject.pages.CatalogPage;
 import ducksPageObject.pages.ProductInfoPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,7 +16,10 @@ public class CatalogTest extends BaseTest {
         return PageUrls.CATALOG_URL;
     }
 
-    @Test(description = "Check if Price filter is enabled by default")
+    @Feature("Catalog")
+    @Story("Implement catalog logic")
+    @Description("Price filter should be enabled by default when opening Catalog")
+    @Test(description = "Open Catalog page")
     public void priceFilterIsActiveByDefault() {
         // given
 
@@ -24,7 +30,10 @@ public class CatalogTest extends BaseTest {
                 "Price filter is not active by default");
     }
 
-    @Test(description = "Product info page opens when click catalogue item")
+    @Feature("Catalog")
+    @Story("Implement catalog logic")
+    @Description("Product info page opens when click catalogue item")
+    @Test(description = "Open Product Info page")
     public void clickCatalogItemOpensProductInfoPage() {
         // given
         CatalogPage catalogPage = new CatalogPage(driver);

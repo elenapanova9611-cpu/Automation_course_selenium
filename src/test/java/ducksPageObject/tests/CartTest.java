@@ -1,8 +1,10 @@
 package ducksPageObject.tests;
 
 import ducksPageObject.pages.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
@@ -12,7 +14,10 @@ public class CartTest extends BaseTest {
         return PageUrls.CATALOG_URL;
     }
 
-    @Test(description = "Product is added to cart when it card button is clicked")
+    @Feature("Cart")
+    @Story("Implement cart logic")
+    @Test(description = "Add product to cart")
+    @Description("Product is added to cart when it card button is clicked")
     public void clickAddToCartButtonAddsProductToCart() {
         // given
         CatalogPage catalogPage = new CatalogPage(driver);
@@ -28,7 +33,10 @@ public class CartTest extends BaseTest {
         Assert.assertTrue(new CartPage(driver).isCartNotEmpty(), "Cart is empty");
     }
 
-    @Test(description = "Products removed from card when remove button is pressed")
+    @Feature("Cart")
+    @Story("Implement cart logic")
+    @Test(description = "Remove product from cart")
+    @Description("Products removed from card when remove button is pressed")
     public void clickRemoveButtonDeletesProductFromCart() {
         // given
         CatalogPage catalogPage = new CatalogPage(driver);

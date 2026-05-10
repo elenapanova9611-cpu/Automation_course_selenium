@@ -1,13 +1,19 @@
 package ducksPageObject.tests;
 
 import ducksPageObject.pages.TopPanelMenuPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TopPanelMenuTest extends BaseTest {
 
-    @Test(description = "Clicking the Home icon in the top panel opens the home page with the slider image visible.")
+    @Feature("Top Panel Menu")
+    @Story("Implement Top Panel Menu")
+    @Description("Clicking the Home icon in the top panel opens the home page with the slider image visible.")
+    @Test(description = "Click the Home icon in the top panel")
     public void homePageButtonClickOpensHomePageTest() {
         // given
         TopPanelMenuPage topPanelMenuPage = new TopPanelMenuPage(driver);
@@ -20,7 +26,10 @@ public class TopPanelMenuTest extends BaseTest {
                 "Expected the home page image to be visible after clicking Home in the top panel.");
     }
 
-    @Test(description = "Clicking Rubber Ducks in the top panel opens the Rubber Ducks category page")
+    @Feature("Top Panel Menu")
+    @Story("Implement Top Panel Menu")
+    @Description("Clicking Rubber Ducks in the top panel opens the Rubber Ducks category page")
+    @Test(description = "Click Rubber Ducks in the top panel")
     public void rubberDuckButtonClickOpensRubberDucksPageTest() {
         // given
         String expectedRubberDucksPageTitle = "Rubber Ducks | My Store";
@@ -36,7 +45,10 @@ public class TopPanelMenuTest extends BaseTest {
     }
 
     // ToDO - flaky test, should be fixed
-    @Test(description = "Hovering Rubber Ducks and clicking Subcategory opens the Subcategory page")
+    @Feature("Top Panel Menu")
+    @Story("Implement Top Panel Menu")
+    @Description("Hovering Rubber Ducks and clicking Subcategory opens the Subcategory page")
+    @Test(description = "Hover Rubber Ducks and clicking Subcategory")
     public void subcategoryButtonClickOpensSubcategoryPageTest() {
         // given
         String expectedSubcategoryPageTitle = "Subcategory | My Store";

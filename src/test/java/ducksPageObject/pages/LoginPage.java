@@ -1,5 +1,6 @@
 package ducksPageObject.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,6 +28,7 @@ public class LoginPage {
         driver.findElement(LOGIN_BUTTON).click();
     }
 
+    @Step("Login")
     public void login(String email, String password) {
         enterEmail(email);
         enterPassword(password);
