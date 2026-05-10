@@ -41,10 +41,10 @@ public class BaseTest {
         open(startUrl());
     }
 
-//    @AfterMethod(alwaysRun = true)
-//    public void tearDown() {
-//        closeWebDriver();
-//    }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        closeWebDriver();
+    }
 
     protected String startUrl() {
         return PageUrls.DUCK_SHOP_URL;
