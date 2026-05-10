@@ -1,6 +1,7 @@
 package ducksSelenide.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -16,6 +17,7 @@ public class CatalogPage {
         return $(FILTER_PRICE);
     }
 
+    @Step("Click catalog item")
     public static void clickCatalogItem() {
         $(PRODUCT_LINK).click();
     }

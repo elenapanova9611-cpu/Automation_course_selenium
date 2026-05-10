@@ -1,6 +1,7 @@
 package ducksSelenide.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import java.time.Duration;
 
@@ -27,6 +28,7 @@ public class CartPage {
         return $(EMPTY_CART_MESSAGE);
     }
 
+    @Step("Remove product from cart")
     public static void clickRemoveButton() {
         $(REMOVE_BUTTON).click();
     }

@@ -1,6 +1,7 @@
 package ducksSelenide.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -16,6 +17,7 @@ public class ProductInfoPage {
         return $(PRODUCT_INFO_BLOCK);
     }
 
+    @Step("Add product to cart")
     public static void clickAddToCartButton() {
         $(ADD_TO_CART_BUTTON).click();
         $(CART_ITEMS_BUTTON).shouldNotHave(text("0"));

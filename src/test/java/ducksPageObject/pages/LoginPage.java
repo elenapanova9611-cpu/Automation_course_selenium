@@ -16,14 +16,17 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    @Step("Enter email")
     public void enterEmail(String email) {
         driver.findElement(EMAIL_INPUT).sendKeys(email);
     }
 
+    @Step("Enter password")
     public void enterPassword(String password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
     }
 
+    @Step("Click login button")
     public void clickLoginButton() {
         driver.findElement(LOGIN_BUTTON).click();
     }
