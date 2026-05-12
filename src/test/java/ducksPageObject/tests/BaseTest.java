@@ -1,5 +1,6 @@
 package ducksPageObject.tests;
 
+import com.epam.reportportal.testng.ReportPortalTestNGListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,9 +8,11 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import java.time.Duration;
 
+@Listeners(ReportPortalTestNGListener.class)
 public class BaseTest {
     protected WebDriver driver;
 
