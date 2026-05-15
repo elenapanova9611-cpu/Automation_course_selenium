@@ -3,6 +3,7 @@ package ducksSelenide.tests;
 import com.codeborne.selenide.Configuration;
 import com.epam.reportportal.testng.ReportPortalTestNGListener;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,26 +17,30 @@ import static com.codeborne.selenide.Selenide.open;
 public class BaseTest {
 
     @BeforeMethod
-    // полностью разобрать
     public void setUp() {
         Browser browser = Browser.valueOf(System.getProperty("browser", "chrome"));
+        DesiredCapabilities caps = new DesiredCapabilities();
 
         switch (browser) {
             case chrome: {
-                ChromeOptions options = new ChromeOptions();
-                options.setAcceptInsecureCerts(true);
+//              ChromeOptions options = new ChromeOptions();
+//              options.setAcceptInsecureCerts(true);
                 Configuration.browser = CHROME;
-                Configuration.browserCapabilities = options;
+//              Configuration.browserCapabilities = options;
                 break;
             }
             case safari: {
-                SafariOptions options = new SafariOptions();
-                options.setAcceptInsecureCerts(true);
+//              SafariOptions options = new SafariOptions();
+//              options.setAcceptInsecureCerts(true);
                 Configuration.browser = SAFARI;
-                Configuration.browserCapabilities = options;
+//              Configuration.browserCapabilities = options;
                 break;
             }
         }
+
+        caps.setAcceptInsecureCerts(true);
+        Configuration.remote = "http://192.168.1.34:4444/wd/hub";
+        Configuration.browserCapabilities = caps;
 
         Configuration.pageLoadTimeout = 5000;
         Configuration.timeout = 5000;
