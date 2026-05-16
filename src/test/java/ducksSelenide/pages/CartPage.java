@@ -16,15 +16,15 @@ public class CartPage {
     private static final By EMPTY_CART_MESSAGE = By.xpath("//em[contains(text(),'There are no items in your cart.')]");
 
 
-    public static SelenideElement getCustomerDetailsTitle() {
+    public static SelenideElement getCustomerDetailsTitleElement() {
         return $(CUSTOMER_DETAILS_TITLE);
     }
 
-    public static SelenideElement getOrderSummaryTitle() {
+    public static SelenideElement getOrderSummaryTitleElement() {
         return $(ORDER_SUMMARY_TITLE);
     }
 
-    public static SelenideElement getEmptyCartMessage() {
+    public static SelenideElement getEmptyCartMessageElement() {
         return $(EMPTY_CART_MESSAGE);
     }
 

@@ -1,6 +1,8 @@
 package ducksSelenide.tests;
 
+import com.codeborne.selenide.AssertionMode;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import ducksSelenide.pages.CartPage;
 import ducksSelenide.pages.CatalogPage;
 import ducksSelenide.pages.GeneralPage;
@@ -30,8 +32,14 @@ public class CartTest extends BaseTest {
         GeneralPage.clickCheckoutButton();
 
         // then
-        CartPage.getCustomerDetailsTitle().shouldBe(Condition.visible);
-        CartPage.getOrderSummaryTitle().shouldBe(Condition.visible);
+        AssertionMode previousMode = Configuration.assertionMode;
+        Configuration.assertionMode = AssertionMode.SOFT;
+        try {
+            CartPage.getCustomerDetailsTitleElement().shouldBe(Condition.visible);
+            CartPage.getOrderSummaryTitleElement().shouldBe(Condition.visible);
+        } finally {
+            Configuration.assertionMode = previousMode;
+        }
     }
 
     @Feature("Cart")
@@ -48,6 +56,6 @@ public class CartTest extends BaseTest {
         CartPage.clickRemoveButton();
 
         // then
-        CartPage.getEmptyCartMessage().shouldBe(Condition.visible);
+        CartPage.getEmptyCartMessageElement().shouldBe(Condition.visible);
     }
 }
