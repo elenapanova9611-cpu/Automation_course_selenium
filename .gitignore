@@ -1,5 +1,4 @@
-arget/
-!.mvn/wrapper/maven-wrapper.jar
+target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -49,3 +48,12 @@ build/
 # Build folders
 /out/
 /target/
+
+# Maven
+.mvn/
+
+# Allure
+allure-results/
+**/allure-results/
+target/site/allure-maven-plugin/
+.allure/
