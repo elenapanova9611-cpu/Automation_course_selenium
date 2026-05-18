@@ -2,9 +2,7 @@ package ducksSelenide.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.epam.reportportal.testng.ReportPortalTestNGListener;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -23,17 +21,11 @@ public class BaseTest {
 
         switch (browser) {
             case chrome: {
-//              ChromeOptions options = new ChromeOptions();
-//              options.setAcceptInsecureCerts(true);
                 Configuration.browser = CHROME;
-//              Configuration.browserCapabilities = options;
                 break;
             }
             case safari: {
-//              SafariOptions options = new SafariOptions();
-//              options.setAcceptInsecureCerts(true);
                 Configuration.browser = SAFARI;
-//              Configuration.browserCapabilities = options;
                 break;
             }
         }
