@@ -1,6 +1,6 @@
 package ducksPageObject.tests;
 
-import com.epam.reportportal.testng.ReportPortalTestNGListener;
+import ducksPageObject.listeners.ScreenshotListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,7 +12,7 @@ import org.testng.annotations.Listeners;
 
 import java.time.Duration;
 
-@Listeners(ReportPortalTestNGListener.class)
+@Listeners(ScreenshotListener.class)
 public class BaseTest {
     protected WebDriver driver;
 
@@ -44,13 +44,19 @@ public class BaseTest {
         driver.get(getPageUrl());
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     protected String getPageUrl() {
         return PageUrls.DUCK_SHOP_URL;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 
     public class PageUrls {
